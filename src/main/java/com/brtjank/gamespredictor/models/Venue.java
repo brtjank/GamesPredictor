@@ -19,6 +19,10 @@ public class Venue {
     @JsonProperty("country_code")
     private String countryCode;
 
+    public String getName() {
+        return this.name;
+    }
+    
     @Override
     public String toString() {
         return "Venue{" +

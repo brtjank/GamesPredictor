@@ -30,6 +30,42 @@ public class Event {
     @JsonProperty("probability_away_team_winner")
     private Double probabilityAway;
 
+    public String getPrediction(){
+        String prediction = "\n\nStart date: " + startDate + 
+            ",\n" + competitionName +
+            ",\n" + competitors[0].getName() + " (" + competitors[0].getCountry() + ") vs. " +
+            competitors[1].getName() + " (" + competitors[1].getCountry() + ") " + 
+            ",\nVenue: ";
+            
+        if (venue != null){
+            prediction += venue.getName();
+        }
+        else {
+            prediction += "Unknown";
+        }
+        prediction += ",\nHighest probable result: " + this.getResult();
+
+        return prediction;
+    }
+
+    public String getResult(){
+        Double highest = 0.0;
+        String result = "";
+        if (probabilityHome > highest){
+            highest = probabilityHome;
+            result = "HOME_TEAM_WIN ";
+        }
+        if (probabilityDraw > highest){
+            highest = probabilityDraw;
+            result = "DRAW ";
+        }
+        if (probabilityAway > highest){
+            highest = probabilityAway;
+            result = "AWAY_TEAM_WIN ";
+        }
+        return result + "(" + highest + ")";
+    }
+    
     @Override
     public String toString() {
         return "Event {" +

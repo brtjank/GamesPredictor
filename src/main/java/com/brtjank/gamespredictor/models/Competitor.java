@@ -19,6 +19,14 @@ public class Competitor {
     @JsonProperty("gender")
     private String gender;
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getCountry() {
+        return this.country;
+    }
+
     @Override
     public String toString() {
         return "Competitor{" +
