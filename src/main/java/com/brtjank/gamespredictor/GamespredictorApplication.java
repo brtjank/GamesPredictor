@@ -24,20 +24,6 @@ public class GamespredictorApplication {
 
 	public static void main(String[] args) throws StreamReadException, DatabindException, IOException{
 		SpringApplication.run(GamespredictorApplication.class, args);
-
-/*		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
-		File file = new File("../BE_data.json");
-		System.out.print(file.getPath());
-		Events events =  objectMapper.readValue(file, Events.class);
-
-		System.out.print("\nHow many games predictions do you want to print?\n");
-		Scanner in = new Scanner(System.in);
-		int number = in.nextInt();
-		System.out.print(events.getMultiplePredictions(number));
-
-		System.exit(0);
-	*/
 	}
 
 	@Bean
