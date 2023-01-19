@@ -12,6 +12,10 @@ public class Events {
         return events.get(index);
     }
 
+    public ArrayList<Event> getAll(){
+        return this.events;
+    }
+
     public String getMultiplePredictions(int number) {
         int i = 0;
         String predictions = "";
