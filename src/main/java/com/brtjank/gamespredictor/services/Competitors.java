@@ -50,6 +50,7 @@ public class Competitors {
     // if no competition is given as an argument (string is empty), then it writes all of the competitors
     public void printSorted(String competitionName, FileWriter myWriter) {
             try {
+                myWriter.write("\n");
                 if (competitionName != "") {
                     myWriter.write("Teams competing in: " + competitionName);
                     Collections.sort(competitors);

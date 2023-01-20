@@ -40,7 +40,7 @@ public class Events {
                 predictions += event.getPrediction();
             }
             else {
-                predictions += "\nNumber too big. Printing predictions for all of the games\n";
+                predictions += "\nNumber of predictions that you wanted to print is too big. Printed predictions for all of the games\n";
                 return predictions;
             }
             i = i + 1;
