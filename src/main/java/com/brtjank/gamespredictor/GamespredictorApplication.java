@@ -23,7 +23,7 @@ public class GamespredictorApplication {
 
 		try {
 			// text file to write to
-			FileWriter myWriter = new FileWriter("../filename.txt");
+			FileWriter myWriter = new FileWriter("../results.txt");
 
 			// mapping given json to java objects
 			ObjectMapper objectMapper = new ObjectMapper();
