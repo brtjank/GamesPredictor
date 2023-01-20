@@ -2,7 +2,7 @@ package com.brtjank.gamespredictor.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Competitor {
+public class Competitor implements Comparable<Competitor>{
  
     @JsonProperty("id")
     private String id;
@@ -35,8 +35,26 @@ public class Competitor {
                 ", country='" + country + 
                 ", country_code='" + countryCode + 
                 ", abbreviation=" + abbreviation +
-                ", qualifier=" + qualifier +
                 ", gender=" + gender +
                '}';
+    }
+
+    @Override
+    public int compareTo(Competitor o) {
+        return this.getName().compareTo(o.getName());
+    }
+
+    @Override
+    public boolean equals (Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Competitor)) {
+            return false;
+        }
+
+        Competitor comp = (Competitor) o;
+        return this.getName().compareTo(comp.getName()) == 0;
     }
 }

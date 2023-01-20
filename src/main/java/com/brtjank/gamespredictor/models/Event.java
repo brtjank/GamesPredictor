@@ -30,11 +30,23 @@ public class Event {
     @JsonProperty("probability_away_team_winner")
     private Double probabilityAway;
 
-    public String getPrediction(){
-        String prediction = "\n\nStart date: " + startDate + 
+    public Competitor getCompetitor1() {
+        return this.competitors[0];
+    }
+
+    public Competitor getCompetitor2() {
+        return this.competitors[1];
+    }
+
+    public String getCompetitionName() {
+        return this.competitionName;
+    }
+    
+    public String getPrediction() {
+        String prediction = "\nStart date: " + startDate + 
             ",\n" + competitionName +
             ",\n" + competitors[0].getName() + " (" + competitors[0].getCountry() + ") vs. " +
-            competitors[1].getName() + " (" + competitors[1].getCountry() + ") " + 
+            competitors[1].getName() + " (" + competitors[1].getCountry() + ")" + 
             ",\nVenue: ";
             
         if (venue != null){
@@ -43,12 +55,12 @@ public class Event {
         else {
             prediction += "Unknown";
         }
-        prediction += ",\nHighest probable result: " + this.getResult();
+        prediction += ",\nHighest probable result: " + this.getMostProbableResult();
 
-        return prediction;
+        return prediction + "\n";
     }
 
-    public String getResult(){
+    public String getMostProbableResult() {
         Double highest = 0.0;
         String result = "";
         if (probabilityHome > highest){
