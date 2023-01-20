@@ -7,6 +7,10 @@ import java.util.Collections;
 
 import com.brtjank.gamespredictor.models.Competitor;
 
+// ********************************************************************************
+// Class made for storing a list of competitors and handling actions on multiple competitors
+// ********************************************************************************
+
 public class Competitors {
     
     ArrayList<Competitor> competitors = new ArrayList<>();
